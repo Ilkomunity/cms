@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portofolios",
+  "info": {
+    "singularName": "portofolio",
+    "pluralName": "portofolios",
+    "displayName": "Portofolio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "UI/UX Design",
+        "Game Dev",
+        "Web Dev",
+        "Mobile Dev",
+        "CTF Write Up",
+        "Daming Notebook",
+        "Hall of Algorithms"
+      ],
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "community": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::community.community",
+      "inversedBy": "portofolios"
+    }
+  }
+}
